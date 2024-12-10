@@ -1,0 +1,2 @@
+
+StyleNest Website is an online platform designed for easy and convenient appointment booking for hair and beauty services. It features Service Selection, Appointment Scheduling, User Reviews, Booking History, and Customer Support. Customers can browse available services, select preferred time slots, and book appointments effortlessly. The system includes a user account section for managing appointments and tracking booking history. Customers can also share reviews and feedback about the services, enhancing the platform’s reliability and user experience.
