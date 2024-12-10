@@ -1,0 +1,50 @@
+<h2 style="color: #1bd1c8; text-align: center; font-family: Arial, sans-serif;">Submit a Review</h2>
+
+<form id="reviewForm" method="post" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto; padding: 20px; border: 2px solid #1bd1c8; border-radius: 10px; background-color: #f9f9f9; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+    {% csrf_token %}
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.as_p }}
+    </div>
+    
+    <button type="submit" style="background-color: #ffa500; color: white; border: none; padding: 12px 20px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 5px; transition: background-color 0.3s ease;">
+        Submit Review
+    </button>
+</form>
+
+<div id="notification" style="display:none; color: #1bd1c8; text-align: center; font-weight: bold; margin-top: 20px;"></div>
+
+<!-- Adding hover effects and animations -->
+<style>
+    form {
+        transition: transform 0.3s ease;
+    }
+    form:hover {
+        transform: scale(1.02);
+    }
+    button:hover {
+        background-color: #ff8c00;
+    }
+</style>
+
+<script>
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevent the default form submission
+
+        // Show the notification message
+        const notification = document.getElementById("notification");
+        notification.innerHTML = "Review Submitted!"; // Set the notification message
+        notification.style.display = "block"; // Show the notification
+        
+        // Animate the notification (optional)
+        notification.style.opacity = 1;
+        setTimeout(() => {
+            notification.style.opacity = 0; // Fade out the notification
+        }, 2000); // Duration before fading out
+
+        // Submit the form after a delay
+        setTimeout(() => {
+            this.submit(); // Submit the form
+        }, 2500); // Time before submitting the form (adjust as needed)
+    });
+</script>

@@ -1,0 +1,11 @@
+<div style="padding: 20px; text-align: center;">
+    <h1 style="color: #1bd1c8; font-family: Arial, sans-serif; animation: fadeIn 1s ease-in-out;">My Orders</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        {% for order in orders %}
+            <div style="width: 300px; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); text-align: center; animation: slideIn 0.7s ease;">
+                <h2 style="color: #ffa500; font-family: Arial, sans-serif; margin-bottom: 10px;">Order {{ order.id }}</h2>
+                <p style="color: #1bd1c8; font-family: Arial, sans-serif; margin: 10px 0;">Status: {{ order.status }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

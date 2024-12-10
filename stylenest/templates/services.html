@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+  Services
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+
+  <section class="services" id="services">
+  <div class="container">
+    <div class="main-txt">
+    <h1><span>S</span>ervices</h1>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+    <!-- Hair Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'images/Services_hairstyle.jpeg' %}" alt="Hair Services" class="service-img">
+        <div class="card-body">
+            <h3>Hair Services</h3>
+            <p>Haircuts, coloring, perming, relaxing, extensions, and treatments to keep your hair fabulous.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Nail Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'images/Services_manicure.jpeg' %}" alt="Nail Services" class="service-img">
+        <div class="card-body">
+            <h3>Nail Services</h3>
+            <p>Manicures, pedicures, acrylic nails, and gel nails for perfectly polished hands and feet.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Skin Care Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'images/Services_skin.jpeg' %}" alt="Skin Care Services" class="service-img">
+        <div class="card-body">
+            <h3>Skin Care</h3>
+            <p>Facials, waxing, threading, and tinting services to rejuvenate your skin.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+    <!-- Makeup Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'images/Services_makeup.jpeg' %}" alt="Makeup Services" class="service-img">
+        <div class="card-body">
+            <h3>Makeup</h3>
+            <p>Professional makeup services for weddings, parties, and special occasions.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Massage Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'images/Services_massage.jpeg' %}" alt="Massage Services" class="service-img">
+        <div class="card-body">
+            <h3>Massage Therapy</h3>
+            <p>Relaxing body massages to relieve stress and rejuvenate your body.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Piercing Services -->
+    <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+        <img src="{% static 'Images\Service_peircing.jpeg' %}" alt="Piercing Services" class="service-img">
+        <div class="card-body">
+            <h3>Piercing</h3>
+            <p>Safe and stylish body piercings for ears, nose, and more.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  
+  </section>
+{% endblock %}
+    

@@ -1,0 +1,41 @@
+<div style="max-width: 600px; margin: 50px auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); text-align: center; animation: slideIn 0.7s ease;">
+    <h1 style="color: #1bd1c8; font-family: Arial, sans-serif; animation: fadeIn 1s ease-in-out;">
+        {{ product.name }}
+    </h1>
+    <p style="color: #555; font-family: Arial, sans-serif; margin: 10px 0; font-size: 16px;">
+        {{ product.description }}
+    </p>
+    <p style="color: #ffa500; font-size: 24px; font-weight: bold; font-family: Arial, sans-serif;">
+        ${{ product.price }}
+    </p>
+    
+    <!-- Updated image styling -->
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); object-fit: cover;">
+    
+    <a href="{% url 'shop:add_to_cart' product.pk %}" style="display: inline-block; padding: 15px 30px; background: #ffa500; color: #fff; text-decoration: none; font-size: 18px; border-radius: 5px; cursor: pointer; transition: background 0.3s; animation: bounce 1.5s infinite;">
+        Add to Cart
+    </a>
+</div>
+
+<!-- Add CSS animations -->
+<style>
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        0% { transform: translateY(-20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+
+    a:hover {
+        background: #1bd1c8;
+    }
+</style>

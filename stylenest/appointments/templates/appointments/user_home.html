@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+    
+    <!-- Load the static files tag -->
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo" href="#"><img src="{% static 'images/logo.jpg' %}" class="logo"></div>
+        <div class="date">{{ date }}</div>
+        <div class="logout"><a href="/">Logout</a></div>
+    </div>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'dashboard' %}" target="content_frame">Dashboard</a></li>
+                <li><a href="{% url 'book' %}" target="content_frame">Book</a></li>
+                <li><a href="{% url 'shop:product_list'%}" target="content_frame">PRODUCTS</a></li>
+                <li><a href="{% url 'shop:cart'%}" target="content_frame">CART</a></li>
+                <li><a href="{% url 'shop:client_order_list'%}" target="content_frame">MY ORDERS</a></li>
+                <li><a href="{% url 'reviews:submit_review'%}" target="content_frame">Review a service</a></li>
+                <li><a href="{% url 'reviews:review_list'%}" target="content_frame">Reviews</a></li>
+            </ul>
+        </div>
+
+        <!-- Middle Section for Dynamic Content -->
+        <div class="content">
+            <iframe name="content_frame" src="{% url 'dashboard' %}" frameborder="0"></iframe>
+        </div>
+
+        <!-- Right Sidebar for Appointments -->
+        <div class="appointments">
+            <h3>Your Appointments</h3>
+            {% for appointment in appointments %}
+                <div class="appointment-item">
+                    <div class="appointment-info">
+                        <p><strong>Type:</strong> {{ appointment.service }}</p>
+                        <p><strong>Subservice:</strong> {{ appointment.sub_service }}</p>
+                        <p><strong>Date:</strong> {{ appointment.date }}</p>
+                        <p><strong>Time:</strong> {{ appointment.time }}</p>
+                        <p><strong>Status:</strong> {{ appointment.status }}</p>
+                        
+                        <!-- Only show the "Cancel" button if the appointment is accepted -->
+                        {% if appointment.status == 'Confirmed' %}
+                            <form action="{% url 'cancel_appointment' appointment.id %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="cancel-btn">Cancel</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <p>No appointments found.</p>
+            {% endfor %}
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>

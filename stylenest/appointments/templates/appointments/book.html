@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment</title>
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Bootstrap Datepicker CSS and JS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    
+        <!-- jQuery Timepicker CSS and JS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    
+    </head>
+    
+
+    <body>
+        <div class="container mt-5">
+            <form method="post" novalidate class="p-4 border rounded bg-light shadow">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_service">Select a Service:</label>
+                    {{ form.service }}
+                </div>
+        
+                <div class="form-group">
+                    <label for="id_sub_service">Select a Sub-Service:</label>
+                    {{ form.sub_service }}
+                </div>
+        
+                <div class="form-group">
+                    <label for="id_date">Select a Date:</label>
+                    {{ form.date }}
+                </div>
+        
+                <div class="form-group">
+                    <label for="id_time">Select a Time:</label>
+                    {{ form.time }}
+                </div>
+        
+                <div class="form-group">
+                    <label for="id_message">Additional Message:</label>
+                    {{ form.notes }}
+                </div>
+        
+                <button type="submit" class="btn btn-primary btn-block">Book Now</button>
+            </form>
+        </div>
+    
+        <!-- Initialize Datepicker and Timepicker -->
+        <script>
+            $(document).ready(function() {
+                // Initialize datepicker
+                $('#id_date').datepicker({
+                    format: 'yyyy-mm-dd',
+                    autoclose: true,
+                    todayHighlight: true
+                });
+    
+                // Initialize timepicker
+                $('#id_time').timepicker({
+                    timeFormat: 'HH:mm',
+                    interval: 30,
+                    defaultTime: '09:00',
+                    startTime: '08:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
+            });
+            
+        // Update sub-service when a service is selected
+            $(document).ready(function() {
+                $('#id_service').change(function() {
+                    var serviceId = $(this).val();
+                    if (serviceId) {
+                        $.ajax({
+                            url: "{% url 'ajax_load_subservices' %}",  // Use this to get the correct URL from Django
+                            data: {
+                                'service_id': serviceId
+                            },
+                            success: function(data) {
+                                $('#id_sub_service').html('');
+                                $.each(data, function(key, value) {
+                                    $('#id_sub_service').append('<option value="' + value.id + '">' + value.name + '</option>');
+                                });
+                            }
+                        });
+                    } else {
+                        $('#id_sub_service').html('<option value="">Select a service first</option>');
+                    }
+                });
+            });
+
+                
+        </script>
+    </body>
+</html>

@@ -1,0 +1,475 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: robto, sans-serif;
+
+}
+body
+{
+    font-family: sans-serif;
+}
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+} 
+.navbar
+{
+    background-image: linear-gradient(to right,#76a0a1, #1bd1c8);
+}
+.navbar-brand img{
+    height: 40px;
+    width: 200px;
+    padding-left: 20px;
+}
+.nav-item
+{
+    margin-left: 20px;
+
+}
+.nav-iten .nav-link
+{
+    font-size: 16px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+.nav-item .nav-link:hover
+{
+    background: white;
+    color: black;
+}
+/* Home Section Start */
+.home
+{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(../images/img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+} 
+@media (max-width: 850px)
+{
+    .home{
+        background-position: center;
+    }
+
+}
+.home .content{
+    text-align: center;
+    padding-top: 200px;
+}
+.home .content h5{
+    color: white;
+    font-size: 38px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+}
+.home .content h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+.changecontent::after{
+    content: ' ';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext{
+    15%{content: "Hair Services";}
+    30%{content: "Nail Services";}
+    45%{content: "Skincare Services";}
+    60%{content: "Makeup";}
+    75%{content: "Consultation";}
+    100%{content: "";}
+   
+} 
+.home .content p{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.home .content a{
+    padding: 10px;
+    background: #1bd1c8;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 550;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.home .content a:hover{
+    background: #ffa500;
+    color: white;
+}
+@media (max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+@media (max-width:450px){
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content h1{
+        font-size: 38px;
+    }
+    .home .content p{
+        font-size: 13px;
+    }
+}
+
+/* Home Section End */
+
+/* General Form Styling */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    box-shadow: 0 0 8px rgba(0, 165, 145, 0.6);
+    border-color: #1bd1c8;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1bd1c8;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.4s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffa500;
+    color: white;
+}
+
+/* Section Background for Form Page */
+#book-appointment {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(.../images/formbackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+}
+
+#book-appointment h2 {
+    font-size: 42px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0px 2px 4px black;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Form Animations */
+form input, form select, form textarea {
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+}
+
+form input:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+form input:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+form input:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+form select:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+form input:nth-child(5) {
+    animation-delay: 0.7s;
+}
+
+form input:nth-child(6) {
+    animation-delay: 0.8s;
+}
+
+form textarea {
+    animation-delay: 0.9s;
+}
+
+button[type="submit"] {
+    animation: fadeInUp 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #book-appointment h2 {
+        font-size: 32px;
+    }
+
+    form input, form select, form textarea {
+        font-size: 13px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}
+/* Services Section */
+.services {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(../images/formbackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+  }
+  
+  .main-txt h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .main-txt h1 span {
+    color: #ffa500;
+  }
+  
+  .card {
+    background-color: #1bd1c8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-body h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .card-body p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .card-body h3:hover {
+    color: #ffa500;
+  }
+  
+  @media (max-width: 768px) {
+    .service-img {
+      height: 150px;
+    }
+  
+    .card-body h3 {
+      font-size: 20px;
+    }
+  
+    .card-body p {
+      font-size: 14px;
+    }
+  }
+
+  
+  /* Navbar Styling */
+.navbar {
+    background-color: #f8f9fa; /* Light background */
+    padding: 15px;
+}
+.navbar-brand img {
+    width: 150px; /* Logo size */
+}
+
+
+
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    max-width: 500px; /* Limit the form width */
+    margin: 40px auto; /* Center the form horizontally */
+    width: 100%; /* Ensure the form is responsive */
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1bd1c8;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.4s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 20px; /* Adjust padding for smaller screens */
+        max-width: 90%; /* Make sure it fits well on smaller screens */
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}
+/* Container for the form and text */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: center; /* Center text elements */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Align the text and link under the form */
+.form-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-text a {
+    color: #1bd1c8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-text a:hover {
+    text-decoration: underline;
+}
+#login-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(../images/formbackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+}
+
+#register-page {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(../images/img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+/* Ensure the form stays centered on both pages */
+form {
+    background: rgba(255, 255, 255, 0.9); /* Keep form background color */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}

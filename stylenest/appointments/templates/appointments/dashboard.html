@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+</head>
+<body>
+    <section style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('{% static 'images/formbackground.jpeg' %}');
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+    " id="services">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="
+                font-size: 48px;
+                color: #333;
+                font-weight: 500;
+            "><span style="color: #ffa500;">S</span>ervices</h1>
+          </div>
+      
+          <div style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 15px; /* Space between cards */
+          ">
+          <!-- Hair Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'images/Services_hairstyle.jpeg' %}" alt="Hair Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Hair Services</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Haircuts, coloring, perming, relaxing, extensions, and treatments to keep your hair fabulous.</p>
+              </div>
+              </div>
+          </div>
+      
+          <!-- Nail Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'images/Services_manicure.jpeg' %}" alt="Nail Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Nail Services</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Manicures, pedicures, acrylic nails, and gel nails for perfectly polished hands and feet.</p>
+              </div>
+              </div>
+          </div>
+      
+          <!-- Skin Care Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'images/Services_skin.jpeg' %}" alt="Skin Care Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Skin Care</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Facials, waxing, threading, and tinting services to rejuvenate your skin.</p>
+              </div>
+              </div>
+          </div>
+      
+          <!-- Makeup Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'images/Services_makeup.jpeg' %}" alt="Makeup Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Makeup</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Professional makeup services for weddings, parties, and special occasions.</p>
+              </div>
+              </div>
+          </div>
+      
+          <!-- Massage Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'images/Services_massage.jpeg' %}" alt="Massage Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Massage Therapy</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Relaxing body massages to relieve stress and rejuvenate your body.</p>
+              </div>
+              </div>
+          </div>
+      
+          <!-- Piercing Services -->
+          <div style="
+              flex: 1 1 calc(33.333% - 30px); /* Adjust width to fit 3 columns */
+              box-sizing: border-box;
+          ">
+              <div style="
+                  background-color: #1bd1c8;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease;
+              ">
+              <img src="{% static 'Images/Service_peircing.jpeg' %}" alt="Piercing Services" style="
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+              ">
+              <div style="
+                  padding: 20px;
+                  text-align: center;
+              ">
+                  <h3 style="
+                      font-size: 24px;
+                      margin-bottom: 15px;
+                      color: #333;
+                  ">Piercing</h3>
+                  <p style="
+                      color: #777;
+                      font-size: 16px;
+                      line-height: 1.6;
+                  ">Safe and stylish body piercings for ears, nose, and more.</p>
+              </div>
+              </div>
+          </div>
+          </div>
+        </div>
+        
+    </section>
+</body>
+</html>

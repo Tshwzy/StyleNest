@@ -1,0 +1,449 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed Top Bar Style */
+.top-bar {
+    background-image: linear-gradient(to right, #76a0a1, #1bd1c8);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Logo Style */
+.top-bar .logo {
+    height: 40px;
+    width: 200px;
+}
+
+/* Date Style */
+.top-bar .date {
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 1px solid #050505;
+    border-radius: 5px;
+    background-color: #ffa500;
+    color: #f0f5f4;
+    display: inline-block;
+    font-weight: bold;
+    animation: blink 1s infinite; /* Adds blinking effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Keyframes for Blinking Effect */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Logout Button Style */
+.top-bar .logout a {
+    color: #fff; /* Set text color to white */
+    text-decoration: none; /* Remove underline */
+    background-color: #f00; /* Set button background color */
+    padding: 8px 15px; /* Add padding for button-like appearance */
+    border: none; /* Remove any border */
+    border-radius: 5px; /* Round the corners */
+    font-weight: bold; /* Make the text bold */
+    transition: background-color 0.3s; /* Add transition effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Hover Effect for Logout Button */
+.top-bar .logout a:hover {
+    background-color: #d00; /* Darken the button color on hover */
+}
+
+/* Container Style */
+.container {
+    display: flex;
+    margin-top: 60px; /* Space for the fixed top bar */
+    height: calc(100vh - 60px); /* Full height minus the top bar */
+}
+
+/* Left Sidebar Style */
+.sidebar {
+    width: 20%;
+    background-color: #a9a2a2;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    position: fixed; /* Fix the sidebar to the left */
+    left: 0;
+    top: 60px; /* Adjust for fixed top bar */
+    height: calc(100vh - 60px); /* Full height minus top bar */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block; /* Make links fill the width */
+    padding: 10px; /* Add padding for a button-like feel */
+    border-radius: 5px; /* Round corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+
+/* Highlighting Hover Effect */
+.sidebar ul li a:hover {
+    background-color: #1bd1c8; /* Highlight color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+/* Content Section (Middle) */
+.content {
+    width: 60%;
+    padding: 20px;
+    margin-left: 20%; /* Space for the left sidebar */
+    margin-right: 20%; /* Space for the right sidebar */
+}
+
+/* Styling for Middle Section with iFrame */
+.content iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for a better look */
+}
+
+/* Appointment Section (Right) */
+.appointments {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed; /* Fix the section to the screen */
+    right: 0;
+    top: 60px; /* Adjust for fixed top bar */
+    height: calc(100vh - 60px); /* Full height minus top bar */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    border-left: 2px solid #ddd; /* Optional: Add a border for separation */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Styling for Appointment Items */
+.appointment-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px; /* Add rounded corners */
+    background-color: #fff; /* Set background color for clarity */
+    width: 90%; /* Adjust width to fit within the section, centered */
+    max-width: 300px; /* Optional: limit the max width for consistency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.appointment-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Add rounded corners to images */
+}
+
+.appointment-info {
+    margin-top: 10px;
+    font-size: 0.9em; /* Adjust font size */
+    color: #333; /* Set text color */
+}
+
+.cancel-btn {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 3px; /* Rounded corners for button */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.cancel-btn:hover {
+    background-color: #d00; /* Darker shade on hover */
+}
+
+/* Booking Form Styling */
+#book-appointment {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+#book-appointment h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#appointment-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#appointment-form .form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+#appointment-form .form-select, 
+#appointment-form .form-control, 
+#appointment-form textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#appointment-form .form-select:focus, 
+#appointment-form .form-control:focus, 
+#appointment-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+#appointment-form .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#appointment-form .btn:hover {
+    background-color: #0056b3;
+}
+
+.subservice-container {
+    display: none; /* Hide initially */
+}
+
+#add-service {
+    background-color: #6c757d;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#add-service:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #book-appointment {
+        padding: 20px 10px;
+    }
+
+    #appointment-form .col-md-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Services Section */
+.services {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(../images/formbackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+  }
+  
+  .main-txt h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .main-txt h1 span {
+    color: #ffa500;
+  }
+  
+  .card {
+    background-color: #1bd1c8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-body h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .card-body p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .card-body h3:hover {
+    color: #ffa500;
+  }
+  
+  @media (max-width: 768px) {
+    .service-img {
+      height: 150px;
+    }
+  
+    .card-body h3 {
+      font-size: 20px;
+    }
+  
+    .card-body p {
+      font-size: 14px;
+    }
+  }
+
+  
+  /* Navbar Styling */
+.navbar {
+    background-color: #f8f9fa; /* Light background */
+    padding: 15px;
+}
+.navbar-brand img {
+    width: 150px; /* Logo size */
+}
+
+/* Login Section Styling */
+#login {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(../images/formbackground.jpeg);
+    
+}
+.login-box {
+    
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Input Styling */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Submit Button Styling */
+.btn-primary {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    font-weight: bold;
+}
+
+/* Hover Effects for Button */
+.btn-primary:hover {
+    background-color: #4cae4c;
+    border-color: #4cae4c;
+}
+
+/* Text Styling */
+h2 {
+    color: #333;
+}
+#auth-forms {
+    background-image: url(../images/formbackground.jpeg); /* Replace with the path to your image */
+    background-size: cover; /* Make the background image cover the whole section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Align items centrally using flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Optional: add padding if needed */
+}
+
+/* Additional styling to ensure content stands out against the background */
+.auth-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Add a translucent background for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for a subtle 3D effect */
+    border-radius: 8px; /* Rounded corners */
+}
+/* Style the right sidebar */
+.right-sidebar {
+    position: absolute;
+    right: 0;
+    top: 60px; /* Adjust this to align with the top bar */
+    width: 250px;
+    height: calc(100% - 60px); /* Adjust to fit the remaining height */
+    background-color: #a9a2a2;
+    padding: 15px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Style the list of accepted appointments */
+.right-sidebar h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.right-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.right-sidebar li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #91f0fc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

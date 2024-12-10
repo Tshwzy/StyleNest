@@ -1,0 +1,35 @@
+<h1 style="color: #1bd1c8; text-align: center; font-family: Arial, sans-serif;">Checkout</h1>
+
+<div style="max-width: 600px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+    <form method="post" action="{% url 'shop:checkout' %}">
+        {% csrf_token %}
+        
+        <h2 style="color: #ffa500; font-family: Arial, sans-serif;">Shipping Information</h2>
+        <div style="margin-bottom: 15px;">
+            <label for="name" style="font-family: Arial, sans-serif;">Name:</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="address" style="font-family: Arial, sans-serif;">Address:</label>
+            <input type="text" id="address" name="address" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="phone" style="font-family: Arial, sans-serif;">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+
+        <h2 style="color: #ffa500; font-family: Arial, sans-serif;">Payment Method</h2>
+        <div style="margin-bottom: 15px;">
+            <label for="payment" style="font-family: Arial, sans-serif;">Choose a payment method:</label>
+            <select id="payment" name="payment" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
+                <option value="credit_card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash_on_delivery">Cash on Delivery</option>
+            </select>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 15px; background: #ffa500; color: #fff; font-size: 18px; border-radius: 5px; text-align: center; border: none; cursor: pointer;">Place Order</button>
+    </form>
+</div>

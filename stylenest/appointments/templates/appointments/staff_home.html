@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+    
+    <!-- Load the static files tag -->
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo" href="#"><img src="{% static 'images/logo.jpg' %}" class="logo"></div>
+        <div class="logout"><a href="/">Logout</a></div>
+    </div>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'accept_appointments' %}" target="content_frame">APPOINTMENTS</a></li>
+                <li><a href="{% url 'shop:staff_order_list'%}" target="content_frame">ORDERS</a></li>
+                <li><a href="{% url 'staff_dashboard'%}" target="content_frame">ACCEPTED APPOINTMENTS</a></li>
+            </ul>
+        </div>
+
+        <!-- Middle Section for Dynamic Content -->
+        <div class="content">
+            <iframe name="content_frame" src="{% url 'accept_appointments' %}" frameborder="0"></iframe>
+        </div>
+
+        <!-- Right Sidebar for Accepted Appointments -->
+        <div class="right-sidebar">
+            <h3>Accepted Appointments</h3>
+            <ul>
+                {% for booking in confirmed_bookings %}
+                <li>
+                    <strong>{{ booking.user.username }}</strong> - {{ booking.service.name }} on {{ booking.date }} at {{ booking.time }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

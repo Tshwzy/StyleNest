@@ -1,0 +1,15 @@
+<h1 style="color: #1bd1c8; text-align: center; font-family: Arial, sans-serif;">Shopping Cart</h1>
+
+<div style="max-width: 800px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #ffa500; font-family: Arial, sans-serif;">Your Cart Items</h2>
+    <ul style="list-style-type: none; padding: 0;">
+        {% for item in cart_items %}
+            <li style="background: #1bd1c8; color: #fff; padding: 10px; margin: 5px 0; border-radius: 5px; font-family: Arial, sans-serif;">
+                {{ item.product.name }} - Quantity: {{ item.quantity }} - Price: ${{ item.product.price }}
+            </li>
+        {% endfor %}
+    </ul>
+    <p style="font-size: 18px; font-family: Arial, sans-serif; color: #ffa500;">Total: ${{ total_price }}</p>
+
+    <a href="{% url 'shop:checkout' %}" style="display: block; text-align: center; padding: 15px; background: #ffa500; color: #fff; font-size: 18px; border-radius: 5px; text-decoration: none;">Proceed to Checkout</a>
+</div>
